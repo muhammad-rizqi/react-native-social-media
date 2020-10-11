@@ -46,13 +46,19 @@ export default class Register extends Component {
           <Text style={styles.textWhite}>
             I have accept with term conditions
           </Text>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => this.props.navigation.navigate('Login')}>
             <Text style={styles.buttonText}>Signup</Text>
           </TouchableOpacity>
 
           <View style={styles.center}>
             <Text style={styles.textWhite}>Already have an account?</Text>
-            <Text style={styles.textWhite}>Login</Text>
+            <Text
+              style={[styles.textWhite, {fontWeight: 'bold'}]}
+              onPress={() => this.props.navigation.navigate('Login')}>
+              Login
+            </Text>
           </View>
         </View>
       </View>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Image, StatusBar, ActivityIndicator} from 'react-native';
+import AppStack from '../routes/AppStack';
 import {styles} from '../styles/styles';
-import Login from './Login';
 
 const SplashPage = () => {
   return (
@@ -30,6 +30,6 @@ export default class Splash extends Component {
   }
 
   render() {
-    return this.state.splash ? <SplashPage /> : <Login />;
+    return this.state.splash ? <SplashPage /> : <AppStack />;
   }
 }

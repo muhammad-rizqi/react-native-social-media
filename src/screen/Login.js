@@ -37,13 +37,19 @@ export default class Login extends Component {
           </View>
           <Text style={styles.textWhite}>Forgot your password?</Text>
 
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => this.props.navigation.navigate('Home')}>
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
 
           <View style={styles.center}>
             <Text style={styles.textWhite}>Don't have an account?</Text>
-            <Text style={styles.textWhite}>Signup</Text>
+            <Text
+              style={[styles.textWhite, {fontWeight: 'bold'}]}
+              onPress={() => this.props.navigation.navigate('Register')}>
+              Signup
+            </Text>
           </View>
         </View>
       </View>

@@ -29,14 +29,22 @@ export default class Home extends Component {
         </View>
         <ScrollView style={styles.pageContainer}>
           <CreateStatus />
-          <Status />
-          <Status />
-          <Status />
-          <Status />
-          <Status />
-          <Status />
-          <Status />
-          <Status />
+          <Status
+            profileImage={{uri: 'https://picsum.photos/200/200'}}
+            status="Consectetur vitae voluptatem voluptas beatae ut sit."
+          />
+          <Status
+            profileImage={{uri: 'https://picsum.photos/200/200'}}
+            status="Soluta ad rerum a quae architecto. Fugiat ex doloremque. Nulla alias soluta alias id autem. Ratione eum doloremque numquam pariatur possimus doloribus at."
+          />
+          <Status
+            profileImage={{uri: 'https://picsum.photos/200/200'}}
+            status="Dolorum adipisci in veniam officia est at voluptatem. Laudantium sunt eos iusto. Tenetur velit provident non ipsum modi tempora voluptas. Omnis delectus ut."
+          />
+          <Status
+            profileImage={{uri: 'https://picsum.photos/200/200'}}
+            status="Et aut voluptatibus similique voluptatem ab deserunt. Sapiente quasi quia. Accusantium rerum enim hic quia eligendi."
+          />
           <ActivityIndicator color="grey" size="large" />
         </ScrollView>
       </View>
