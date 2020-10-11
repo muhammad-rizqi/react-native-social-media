@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {
   Image,
-  Text,
   View,
   TextInput,
-  TouchableOpacity,
   ScrollView,
   StatusBar,
   ActivityIndicator,

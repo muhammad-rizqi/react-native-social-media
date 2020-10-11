@@ -10,6 +10,12 @@ export const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
   },
+  centerContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#16161a',
+  },
   companyImage: {
     height: 200,
     width: 200,
