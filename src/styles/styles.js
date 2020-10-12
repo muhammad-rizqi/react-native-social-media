@@ -92,7 +92,7 @@ export const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    color: colors.input,
+    color: colors.textLight,
     paddingVertical: 0,
     marginLeft: 8,
   },

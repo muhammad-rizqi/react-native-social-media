@@ -12,7 +12,29 @@ import Status from '../components/Status';
 import {styles} from '../styles/styles';
 
 export default class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: [
+        {
+          id: 1,
+          profileImage: 'https://picsum.photos/200/200',
+          name: 'Muhammad Rizqi',
+          status: 'Recusandae aut aut sit minima et ullam quis.',
+          loved: false,
+        },
+        {
+          id: 2,
+          profileImage: 'https://picsum.photos/200/200',
+          name: 'Gamblang Pradipta',
+          status: 'Recusandae aut aut sit minima et ullam quis.',
+          loved: false,
+        },
+      ],
+    };
+  }
   render() {
+    const rest = this.state.data;
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="#212227" />
@@ -28,23 +50,18 @@ export default class Home extends Component {
           />
         </View>
         <ScrollView style={styles.pageContainer}>
-          <CreateStatus />
-          <Status
-            profileImage={{uri: 'https://picsum.photos/200/200'}}
-            status="Consectetur vitae voluptatem voluptas beatae ut sit."
+          <CreateStatus
+            onSubmit={(data) => this.setState({data: rest.concat(data)})}
           />
-          <Status
-            profileImage={{uri: 'https://picsum.photos/200/200'}}
-            status="Soluta ad rerum a quae architecto. Fugiat ex doloremque. Nulla alias soluta alias id autem. Ratione eum doloremque numquam pariatur possimus doloribus at."
-          />
-          <Status
-            profileImage={{uri: 'https://picsum.photos/200/200'}}
-            status="Dolorum adipisci in veniam officia est at voluptatem. Laudantium sunt eos iusto. Tenetur velit provident non ipsum modi tempora voluptas. Omnis delectus ut."
-          />
-          <Status
-            profileImage={{uri: 'https://picsum.photos/200/200'}}
-            status="Et aut voluptatibus similique voluptatem ab deserunt. Sapiente quasi quia. Accusantium rerum enim hic quia eligendi."
-          />
+          {this.state.data.map((item, index) => (
+            <Status
+              key={item.id}
+              name={item.name}
+              profileImage={{uri: item.profileImage}}
+              status={item.status}
+              love={item.loved}
+            />
+          ))}
           <ActivityIndicator color="grey" size="large" />
         </ScrollView>
       </View>

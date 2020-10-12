@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {Text, View, TextInput, TouchableOpacity, StatusBar} from 'react-native';
 import {styles} from '../styles/styles';
