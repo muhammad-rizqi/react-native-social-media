@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {color} from 'react-native-reanimated';
 import {colors} from './color';
 
 export const styles = StyleSheet.create({
@@ -78,11 +79,12 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
     backgroundColor: colors.secondary,
-    height: 43,
-    width: '100%',
+    borderRadius: 10,
+    margin: 16,
+    height: 56,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 8,
+    paddingHorizontal: 16,
   },
   icon: {
     width: 20,
@@ -126,5 +128,63 @@ export const styles = StyleSheet.create({
     paddingTop: 8,
     flexDirection: 'row',
     justifyContent: 'space-around',
+  },
+  incomingMessage: {
+    backgroundColor: colors.secondary,
+    alignSelf: 'flex-start',
+  },
+
+  messageItem: {
+    padding: 8,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: colors.border,
+    marginVertical: 4,
+    minWidth: '40%',
+    maxWidth: '80%',
+    position: 'relative',
+    paddingBottom: 12,
+  },
+  outgoingMessage: {
+    backgroundColor: colors.button,
+    alignSelf: 'flex-end',
+  },
+
+  composeMessage: {
+    backgroundColor: colors.secondary,
+    margin: 4,
+    minHeight: 40,
+    maxHeight: 150,
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 8,
+    borderRadius: 10,
+  },
+  messageTime: {
+    position: 'absolute',
+    bottom: 0,
+    right: 5,
+    fontSize: 10,
+  },
+  appBar: {
+    flexDirection: 'row',
+    padding: 8,
+    backgroundColor: colors.secondary,
+    width: '100%',
+    alignItems: 'center',
+    borderBottomColor: colors.border,
+    borderBottomWidth: 1,
+  },
+  appBarText: {
+    flex: 1,
+    marginHorizontal: 16,
+  },
+  appBarTitle: {
+    color: colors.textLight,
+    fontSize: 18,
+  },
+  appBarDesc: {
+    fontSize: 10,
+    color: colors.textLight,
   },
 });
