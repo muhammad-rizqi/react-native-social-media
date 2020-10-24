@@ -6,15 +6,22 @@ import {
   TouchableOpacity,
   Image,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import {styles} from '../styles/styles';
 
 export default class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+    };
+  }
   render() {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="#16161a" />
-        <View style={styles.form}>
+        <ScrollView style={styles.form}>
           <Image
             source={require('../assets/images/logo.png')}
             style={styles.companyImage}
@@ -25,6 +32,7 @@ export default class Login extends Component {
               placeholder="Email"
               style={styles.inputText}
               placeholderTextColor="#7b7d8a"
+              onChangeText={(email) => this.setState({username: email})}
             />
           </View>
           <View style={styles.inputContainer}>
@@ -39,7 +47,11 @@ export default class Login extends Component {
 
           <TouchableOpacity
             style={styles.button}
-            onPress={() => this.props.navigation.navigate('Home')}>
+            onPress={() =>
+              this.props.navigation.navigate('Chat', {
+                username: this.state.username,
+              })
+            }>
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
 
@@ -51,7 +63,7 @@ export default class Login extends Component {
               Signup
             </Text>
           </View>
-        </View>
+        </ScrollView>
       </View>
     );
   }
